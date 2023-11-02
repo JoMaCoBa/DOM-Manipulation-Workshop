@@ -111,7 +111,7 @@ body {
 }
 
 .footer {
-    height: 80px;
+    max-height: 80px;
     display: grid;
     place-content: center;
     background-color: #f0f3f7;
@@ -125,8 +125,14 @@ body {
 
 }
 
+@media screen and (max-width: 1000px) {
+    .container {
+        grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    }
+}
+
 @media screen and (max-width: 800px) {
     .container {
-        grid-template-columns: repeat(1, minmax(min-content, 1fr));
+        grid-template-columns: repeat(2, minmax(min-content, 1fr));
     }
 }
