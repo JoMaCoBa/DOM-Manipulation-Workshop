@@ -1,11 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins');
 
-:root {
-    --Laser: #c8a26f;
-    --Sandwisp: #f1f4a4;
-    --Wattle: #c5d750;
-
-    --background-color: #f7f7f7;
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+/* Background of the scrollbar (light gray) */
+::-webkit-scrollbar-track {
+    background-color: #f0f3f7;
+}
+  
+/* Color of the scrollbar (light gray and transparent) */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(200, 200, 200, 0.7); 
+    border-radius: 6px;
+}
+  
+/* Top of the scrollbar (make it transparent) */
+::-webkit-scrollbar-corner {
+    background-color: transparent;
 }
 
 * {
@@ -15,6 +27,8 @@
     text-decoration: none;
     list-style: none;
     font-family: 'Poppins', sans-serif;
+
+    scrollbar-color: #f0f3f7 rgba(200, 200, 200, 0.7);
 }
 
 body {
@@ -40,7 +54,6 @@ body {
 }
 
 .cards {
-    height: calc(100vh - 200px);
     display: grid;
     place-content: center;
 }
@@ -60,6 +73,7 @@ body {
     text-align: center;
     background-color: #f0f3f7;
     box-shadow: 0 2px 12px grey;
+    overflow: hidden;
 }
 
 .card__title,
@@ -76,11 +90,24 @@ body {
     border-radius: 50%;
     object-fit: contain;
     object-position: center;
+    pointer-events: none;
+}
+
+.card__subtitle {
+    text-align: justify;
+    font-size: .9rem;
+    font-weight: 600;
 }
 
 .card__description {
+    height: 120px;
+    overflow: scroll;
+}
+
+.description__content {
     text-align: justify;
-    font-size: 1rem;
+    padding-right: 6px;
+    font-size: .8rem;
 }
 
 .footer {
